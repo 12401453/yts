@@ -32,9 +32,7 @@ data = json.loads(json_str)
 
 data_2 = data["contents"]["twoColumnSearchResultsRenderer"]["primaryContents"]["sectionListRenderer"]["contents"]
 
-itemSectionRenderer_no = 0
-if len(data_2) > 2:
-    itemSectionRenderer_no = 1
+itemSectionRenderer_no = len(data_2) - 2
 
 
 #for video in data["contents"]["twoColumnSearchResultsRenderer"]["primaryContents"]["sectionListRenderer"]["contents"][0]["itemSectionRenderer"]["contents"]:

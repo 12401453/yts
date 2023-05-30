@@ -96,21 +96,21 @@ def print_long():
       
 
 if(args.c == True):
-    print_long()
-else:
     print_short()
+else:
+    print_long()
 print('\033[1;32;40m', end="")
 
 option_no = 0
-vid = False
+vid = True
 option_no_str = input("Play no.: ")
-if option_no_str[-1].lower() == 'v':
+if option_no_str[-1].lower() == 'a':
     try:
         option_no = int(option_no_str[0:-1])
     except:
         print("Invalid selection")
         exit(0)
-    vid = True
+    vid = False
 else:
     try:
         option_no = int(option_no_str)
@@ -123,6 +123,6 @@ if((option_no <= len(result_urls) and option_no > 0) == False):
 # print(result_urls[option_no - 1])
 
 if vid == False:
-    subprocess.run(["mpv", "--no-ytdl", "--ytdl-format=ba", result_urls[option_no - 1]])
+    subprocess.run(["mpv", "--ytdl-format=ba", result_urls[option_no - 1]])
 else:
-    subprocess.run(["mpv", "--no-ytdl", result_urls[option_no - 1]])
+    subprocess.run(["mpv", result_urls[option_no - 1]])

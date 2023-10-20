@@ -135,9 +135,9 @@ if((option_no <= len(result_urls) and option_no > 0) == False):
 
 if dl == False:
     if vid == False:
-        subprocess.run(["mpv", "--no-ytdl", "--ytdl-format=ba", result_urls[option_no - 1]])
+        subprocess.run(["mpv", "--ytdl-format=ba", result_urls[option_no - 1]])
     else:
-        subprocess.run(["mpv", "--no-ytdl", result_urls[option_no - 1]])
+        subprocess.run(["mpv", result_urls[option_no - 1]])
 else:
     if vid == False:
         subprocess.run(["yt-dlp", "-f bestaudio", result_urls[option_no - 1], f"-o{dl_filename}"])
